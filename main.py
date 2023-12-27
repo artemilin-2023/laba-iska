@@ -1,4 +1,3 @@
-import re
 import string
 import random
 
@@ -26,6 +25,7 @@ def main():
         for word in row:
             result.append(count_vowel(word))
 
+    result = sorted(result)
     print("Результат: ", result)
     
     
