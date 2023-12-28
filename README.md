@@ -6,7 +6,7 @@
 1. Скачиваешь инструменты
 ```
 winget install Git.Git
-winget intall Python.Python.3.10
+winget install Python.Python.3.10
 ```
 2. Клонируешь репозиторий (предварительно меняешь дирректорию на ту, куда хочешь скачать проект)
 ```
