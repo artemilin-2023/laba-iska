@@ -8,6 +8,7 @@
 winget install Git.Git
 winget install Python.Python.3.10
 ```
+Теперь открываешь PowerShell
 2. Клонируешь репозиторий (предварительно меняешь дирректорию на ту, куда хочешь скачать проект)
 ```
 git clone https://github.com/artemilin-2023/laba-iska.git
