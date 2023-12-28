@@ -22,7 +22,7 @@ pip install virtualenv
 ```
 virtualenv venv
 Set-ExecutionPolicy Unrestricted -Force
-source ./venv/Scripts/activate
+./venv/Scripts/activate
 ```
 5. Можешь запустить проет вот так:
 ```
