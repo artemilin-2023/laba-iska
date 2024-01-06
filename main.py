@@ -1,15 +1,24 @@
 import string
 import random
+import keyboard
+
+keyboard.block_key('alt')
+keyboard.block_key('ctrl')
 
 MATRIX_LENGTH_DIAPOSONE = range(2, 6)
 BREAK_INPUT_SYMBOL = "0"
 WORD_LENGTH = 4
 
 def main():
-    matrix_lenght = int(input("Введите размерность матрицы в диапозоне [2, 5]: "))
-    if matrix_lenght not in MATRIX_LENGTH_DIAPOSONE:
-        print("Введенное значение некорректоно")
-        return
+
+    matrix_lenght = 0
+    while True:
+        try_input_matrix_lenght = input("Введите размерность матрицы в диапозоне [2, 5]: ")
+        if try_input_matrix_lenght.isdigit():
+            if int(try_input_matrix_lenght) in MATRIX_LENGTH_DIAPOSONE:
+                matrix_lenght = int(try_input_matrix_lenght)
+                break
+    
 
     matrix = [[""] * matrix_lenght for _ in range(matrix_lenght)]
 
@@ -28,11 +37,9 @@ def main():
     result = sorted(result)
     print("Результат: ", result)
     
-    
-
 def fill_matrix(matrix: list) -> None:
 
-    def generate_random_word() -> str:
+    def generate_random_word() -> str:#программ самма выбирает последовательность букв
         word = ""
         alphabet = list(string.ascii_lowercase)
         for _ in range(WORD_LENGTH): 
@@ -40,7 +47,7 @@ def fill_matrix(matrix: list) -> None:
     
         return word
 
-    def is_latin_alpha(word: str) -> bool:
+    def is_latin_alpha(word: str) -> bool:#проверяем английская ли это буква
         for i in range(len(word)):
             if not ('a' <= word[i] <= 'z' or 'A' <= word[i] <= 'Z'):
                 return False
@@ -65,11 +72,9 @@ def fill_matrix(matrix: list) -> None:
             else:
                 matrix[i][j] = generate_random_word()
 
-
 def print_matrix(matrix: list) -> None:
     for row in matrix:
         print(row) 
-
 
 def count_vowel(word: str) -> int:
     counter = 0
