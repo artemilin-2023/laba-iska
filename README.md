@@ -42,7 +42,7 @@ python main.py
 Эта вкладка мне чисто по приколу
 1. Скачиваешь инструменты
 ```
-pkg update && pkg -y upgrade
+pkg update && pkg upgrade -y
 pkg install git
 pkg install python && pkg install python2 && pkg install python3
 ```
